@@ -55,4 +55,4 @@ standard only guarantees:
   back to '\n'
 
 Note: This can cause misread the file created on a platform using different
-sequence.
+newline sequence.
