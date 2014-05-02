@@ -9,7 +9,14 @@ This serves as the content for a blog and it will be written in markdown.
 - heartbleeding
 - suppressive assert
 - testsuite
+- coding style
 
 ## Language
 
-## Others
+- Java misleading methods
+- c implicit conversion
+- object interning
+
+## Trivial
+
+- CRLF
