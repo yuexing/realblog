@@ -18,11 +18,28 @@ have been initialized with the current date and time.
 
 ### No physical tabs
 
+Except for where it is necessary, eg. Makefile.
+
+Tab key stands for tabulate charactor and is derived from making tables with
+typewriter by moving the assembly to the next stop with some width. Nowadays,
+tabs are used for indentation. However, physical tabs shows differently (in
+width) across systems. Thus use soft tabs, which is spaces-made-virtual-tab,
+instead.
+
 ### Indentation
+
+Indentation is used for represent the program visually logically by reflecting
+its structure. Some programming language, eg. Python, mandate indentation.
 
 ### Line length
 
+Use hard-break instead of soft-break as wrapping long lines is not a common
+default setting in most editors.
+
 ### Naming conventions
+
+under_score or CamelCase, but not mixed. There are cases for
+underscored_CamelCase, which is for very special thing.
 
 ### Include and Import
 
@@ -30,19 +47,44 @@ have been initialized with the current date and time.
 
 ### Blank lines
 
+Blank lines shows relatedness.
+
 ### Braces
+
+Another way for both Indentation and Relatedness.
 
 ## File naming
 
-### Extensions
-
-### Use dashes, not underscores
+No whitespace character and uppercases, prefer dash to underscore which is hard to type.
+Use dot only for extension.
 
 ## Exception Handling
 
 ### Exception Or Return-error
 
+General Rule: For common or expected cases, avoid using exceptions; they are
+slow, can be difficult to follow in a debugger and are a potential portability
+problem.
+
 ### Writing exception handlers
+
+Eric Lippert divides exception into four categories:
+
+- Fatal: If thrown, the world is about to the end. Out of memory, out of
+  stack, thread aborted. Nothing you can do about. Run the finally block and
+  hope for the best
+- Boneheaded: Thrown means a bug. Never happens in a correct program so never
+  catch it
+- Vexing: A badly-designed API gives the caller no way to validate the
+  arguments and prevent the exception. Whether the exception should be caught
+  or not depends on the calling context, eg. no way to validate Json unless
+  you call the parse function and it throws
+- Exogenous: Indicate the surprise hard to determine in the first place, eg. the 
+  network cable is unplugged, the disk is full, etc. These are almost always
+  handled
+
+It is common for Vexing and Exogenous to be caught directly instead of many
+levels far.
 
 ### Exception class
 
