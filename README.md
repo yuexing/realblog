@@ -7,7 +7,7 @@ This serves as the content for a blog and it will be written in markdown.
 ## Engineering
 
 - heartbleeding
-- suppressive assert
+- suppressible assert
 - testsuite
 - coding style
 - json

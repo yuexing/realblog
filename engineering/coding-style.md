@@ -86,9 +86,19 @@ Eric Lippert divides exception into four categories:
 It is common for Vexing and Exogenous to be caught directly instead of many
 levels far.
 
-### Exception class
+Moreover, 
+
+- comment exception handler with context and reason for the action because there 
+  is a gap between being thrown and being caught
+- never use an empty exception handler
+- write some debug-assisting functions: 
+  - _breakpoint_: a simple function printing out the context (catch, rethrow, 
+     fail, etc.)
 
 ### Assertions
+
+Use assertion as much as possible to state your certainty. However, original assert 
+always leads to abort. Thus write a helpful suppressible assert function.
 
 ## Comments
 
@@ -102,4 +112,11 @@ levels far.
 
 ## Exit Code
 
+- 0: success
+- 1: everything is alright but the result may be unexpected
+- 2: user error
+- 4:(application) unexpected error
+
 ## Testing
+
+See in testsuite.
