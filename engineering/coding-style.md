@@ -106,7 +106,30 @@ always leads to abort. Thus write a helpful suppressible assert function.
 
 ## Class
 
+### Sections
+
+- types
+- data
+- methods
+- static/non-static
+- access control
+- ctor/dtor
+
 ### Do not mix overloading and overriding
+
+- overloading: in the scope there are multiple functions with the same name
+  and the compiler chooses based on the type of arguments
+- overriding: when a virtual function is defined in a base class and is then
+  defined again in a dericed class, then the program chooses at the runtime
+  based on the dynamic type of receiver object
+- That is, in a given class scope, it should not happen that there are
+  functions with the same name and at least one of them is either implicit or
+  explicit virtual
+
+### Overload
+
+- Do not overload just based on the constness
+- Do not make it too confused and difficult to argue which function it is called
 
 ## Third-party Library
 

@@ -51,9 +51,8 @@ If the destination is unsigned, the resulting value is the smallest unsigned
 value equal to the source value modulo 2^n where n is the number of bits used
 to represent the destionation type.
 
-Formally, we take the residue the same sign with the modulus. If the destination 
-type is wider, signed integer are sign-extended and unsigned integer are
-zero-extended.
+Normally, we take the residue(with the same sign with the modulus), thus the 
+signed integer are sign-extended and unsigned integer are zero-extended.
 
 If the destionation is signed, the value does not change if the source integer
 can be represented in the destionation type; otherwise, the result is
@@ -77,6 +76,8 @@ conversion function call
 
 ## Usage
 
+- bug of SIGN_EXTENSION
+
 The following method intends to read p[0...3] as an unsigned integer in 
 little-endian format, however, due to integral-promotion-to-int and
 int-to-unsigned-long-signed-extension, the result is wrong:
@@ -91,3 +92,20 @@ unsigned long readLittleEndian(unsigned char *p)
 }
 
 </pre>
+
+- bug of INTEGER_OVERFLOW
+
+<pre>
+void test(int fd)
+{
+    int y;
+    read(fd, &y, 4);
+    MyStruct *arr = new MyStruct[y]; // y * sizeof(MyStruct) can overflow
+}
+</pre>
+
+- bug of OVERFLOW_BEFORE_WIDEN
+
+in which the value of arithmetic expression might overflow before the result
+is widen to a larger data type, which is actually due to casting too late and
+can be fixed by casting before the operation.
