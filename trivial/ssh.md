@@ -20,7 +20,7 @@ Then, generate a key-pair on the _source_ machine. The generated files will be
 $ ssh-keygen -t dsa
 </pre>
 
-Finally, copy the content of public keys to the ~/.ssh/authorized_keys file on
+Finally, copy the content of the public key to the ~/.ssh/authorized_keys file on
 the _destination_ machine
 
 <pre>
@@ -28,3 +28,15 @@ scp ~/.ssh/id_dsa.pub <username>@<host>:~
 ssh <username>@<host>
 cat id_dsa.pub >> .ssh/authorized_keys
 </pre>
+
+## Access <host> as <role>
+
+Add a ~/.ssh/config file on the _source_ machine with the content like
+
+<pre>
+host b-*
+User <username>
+</pre>
+
+Also, copy the content of the public key to the _destionation_ machine 
+/home/<username>/.ssh/authorized_keys
