@@ -29,12 +29,12 @@ ssh <username>@<host>
 cat id_dsa.pub >> .ssh/authorized_keys
 </pre>
 
-## Access <host> as <role>
+## Access _destionation_ as someone else
 
 Add a ~/.ssh/config file on the _source_ machine with the content like
 
 <pre>
-host b-*
+Host b-*
 User <username>
 </pre>
 
