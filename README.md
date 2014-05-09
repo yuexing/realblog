@@ -6,11 +6,12 @@ This serves as the content for a blog and it will be written in markdown.
 
 ## Engineering
 
+- coding-style
+- java-dev
+- json
 - heartbleeding
 - suppressible assert
 - testsuite
-- coding style
-- json
 
 ## Language
 
