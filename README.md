@@ -19,6 +19,7 @@ This serves as the content for a blog and it will be written in markdown.
 - c implicit conversion
 - object interning
 - overload
+- cpp-rethrow
 
 ## Trivial
 
