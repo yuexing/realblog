@@ -75,3 +75,8 @@
   <pre>
     export LD_LIBRARY_PATH=/nfs/yxing/libs:$LD_LIBRARY_PATH
   </pre>
+
+- you should be able to run:
+  <pre>
+    java -XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly <class-file>
+  </pre>
