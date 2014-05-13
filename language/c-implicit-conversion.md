@@ -47,14 +47,14 @@ unsigned int, long, unsigned long, long long, unsigned long long.
 
 - integral conversions
 
-If the destination is unsigned, the resulting value is the smallest unsigned
+If the destination is _unsigned_, the resulting value is the smallest unsigned
 value equal to the source value modulo 2^n where n is the number of bits used
 to represent the destionation type.
 
-Normally, we take the residue(with the same sign with the modulus), thus the 
-signed integer are sign-extended and unsigned integer are zero-extended.
+As we take the residue(with the same sign with the modulus), the signed
+integer may be sign-extended and the unsigned integer may be zero-extended.
 
-If the destionation is signed, the value does not change if the source integer
+If the destionation is _signed_, the value does not change if the source integer
 can be represented in the destionation type; otherwise, the result is
 implementation-defined.
 

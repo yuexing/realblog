@@ -6,10 +6,12 @@ This serves as the content for a blog and it will be written in markdown.
 
 ## Engineering
 
+- coding-style
+- java-dev
+- json
 - heartbleeding
 - suppressible assert
 - testsuite
-- coding style
 - json
 - bit manipulation
 
@@ -18,6 +20,8 @@ This serves as the content for a blog and it will be written in markdown.
 - Java misleading methods
 - c implicit conversion
 - object interning
+- overload
+- cpp-rethrow
 
 ## Trivial
 
