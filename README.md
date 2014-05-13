@@ -11,6 +11,7 @@ This serves as the content for a blog and it will be written in markdown.
 - testsuite
 - coding style
 - json
+- bit manipulation
 
 ## Language
 
