@@ -24,6 +24,7 @@ This serves as the content for a blog and it will be written in markdown.
 - cpp-rethrow
 - division
 - CSharp integers
+- Generics vs Templates
 
 ## Trivial
 
