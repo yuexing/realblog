@@ -68,7 +68,6 @@ way on runtime information, including:
 
 ## CSharp
 
-
 Generics actually extends the IL to carry the type arguments in the runtime, thus 
 CSharp does not allow raw type and permits those limitations(in Java) in runtime.
 
