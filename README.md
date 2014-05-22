@@ -27,6 +27,7 @@ This serves as the content for a blog and it will be written in markdown.
 - Generics vs Templates
 - foreach
 - immutable
+- charp pattern based approach
 
 ## Trivial
 
