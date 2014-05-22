@@ -28,6 +28,7 @@ This serves as the content for a blog and it will be written in markdown.
 - foreach
 - immutable
 - charp pattern based approach
+- struct and generated code
 
 ## Trivial
 
