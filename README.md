@@ -6,14 +6,14 @@ This serves as the content for a blog and it will be written in markdown.
 
 ## Engineering
 
+- bit manipulation
 - coding-style
+- fs
 - java-dev
 - json
 - heartbleeding
 - suppressible assert
 - testsuite
-- json
-- bit manipulation
 
 ## Language
 
