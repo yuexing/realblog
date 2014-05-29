@@ -20,11 +20,11 @@ corresponding type, which will be returned.
 
 - java.net.URL.equals
 
-Two URL objects are euqal iff they have the same protocal, reference
+Two URL objects are euqal iff they have the same protocal, reference the
 equivalent hosts, have the same port number on the host, and the same file and
 fragment of the file. Moreover, two hosts are considered equivalent if both
 host names can be resolved into the same IP address, else if the names are
-qual without regard to case and can not be resolved, or both names are equal
+equal without regard to case and cannot be resolved, or both names are equal
 to null. The name resolution is a blocking operation.
 
 - <collection>.add
