@@ -8,6 +8,7 @@ This serves as the content for a blog and it will be written in markdown.
 
 - bit manipulation
 - coding-style
+- concurrency
 - fs
 - java-dev
 - json
