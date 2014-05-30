@@ -20,6 +20,7 @@ This serves as the content for a blog and it will be written in markdown.
 - Java misleading methods
 - c implicit conversion
 - csharp conversion
+- csharp constructors
 - object interning
 - overload
 - cpp-exceptions
