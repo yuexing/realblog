@@ -1,4 +1,6 @@
-# Rethrow
+# Cpp Exceptions
+
+## Rethrow
 
 Catch the exception and throw it again.
 
@@ -51,3 +53,43 @@ int main()
     }
 }
 </pre>
+
+## try...catch... and destructors
+
+Compile the following code:
+
+<pre>
+struct S {
+    ~S() {  }
+};
+void throws() {
+    S s;
+    throw 0;
+}
+int main() {
+    try {
+        throws();
+    } catch (int &) {
+
+    }
+}
+</pre>
+
+with:
+
+<pre>
+g++ -m32 -S test.cc
+</pre>
+
+You will see the line:
+
+<pre>
+call    __cxa_throw
+</pre>
+
+which will:
+
+- walk the stack with the help of the exception tables untile it finds a
+  handler for the exception;
+- unwind the stack (call destructors on the way) until it gets to that handler
+- call the handler

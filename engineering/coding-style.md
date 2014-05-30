@@ -64,7 +64,8 @@ Use dot only for extension.
 
 General Rule: For common or expected cases, avoid using exceptions; they are
 slow, can be difficult to follow in a debugger and are a potential portability
-problem.
+problem. When the afterthought decision is to use exceptions, consider how the 
+support engineer will live with it.
 
 ### Writing exception handlers
 
@@ -94,6 +95,9 @@ Moreover,
 - write some debug-assisting functions: 
   - _breakpoint_: a simple function printing out the context (catch, rethrow, 
      fail, etc.)
+
+For an exception, either wrap/throw it or log it, but never do both; take care
+not to lose stacktrace.
 
 ### Assertions
 

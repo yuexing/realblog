@@ -21,7 +21,7 @@ This serves as the content for a blog and it will be written in markdown.
 - c implicit conversion
 - object interning
 - overload
-- cpp-rethrow
+- cpp-exceptions
 - division
 - CSharp integers
 - Generics vs Templates
@@ -31,6 +31,7 @@ This serves as the content for a blog and it will be written in markdown.
 - struct and generated code
 - yield
 - resource-leak
+- name-mangling
 
 ## Trivial
 
