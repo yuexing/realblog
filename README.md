@@ -21,21 +21,22 @@ This serves as the content for a blog and it will be written in markdown.
 
 - Java misleading methods
 - c implicit conversion
+- cpp-exceptions
 - csharp conversion
 - csharp constructors
+- csharp integers
+- charp pattern based approach
+- division
+- foreach
+- Generics vs Templates
+- immutable
+- loader
+- name-mangling
 - object interning
 - overload
-- cpp-exceptions
-- division
-- CSharp integers
-- Generics vs Templates
-- foreach
-- immutable
-- charp pattern based approach
+- resource-leak
 - struct and generated code
 - yield
-- resource-leak
-- name-mangling
 
 ## Trivial
 
