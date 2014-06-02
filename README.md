@@ -13,6 +13,7 @@ This serves as the content for a blog and it will be written in markdown.
 - java-dev
 - json
 - heartbleeding
+- std
 - suppressible assert
 - testsuite
 
