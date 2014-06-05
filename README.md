@@ -22,10 +22,11 @@ This serves as the content for a blog and it will be written in markdown.
 - Java misleading methods
 - c implicit conversion
 - cpp-exceptions
+- cpp-reference
 - csharp conversion
 - csharp constructors
 - csharp integers
-- charp pattern based approach
+- csharp pattern based approach
 - division
 - foreach
 - Generics vs Templates
