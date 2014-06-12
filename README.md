@@ -19,7 +19,6 @@ This serves as the content for a blog and it will be written in markdown.
 
 ## Language
 
-- Java misleading methods
 - c implicit conversion
 - cpp-exceptions
 - cpp-reference
@@ -31,6 +30,8 @@ This serves as the content for a blog and it will be written in markdown.
 - foreach
 - Generics vs Templates
 - immutable
+- Java misleading methods
+- javascript prototype
 - loader
 - name-mangling
 - object interning
