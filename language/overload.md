@@ -42,6 +42,35 @@ void func(int type, ...)
 
 Support.
 
+Overload is allowed for function, base-template function (not
+fully-specialized function). As to template, both classes and functions can be
+templated, but functions can only be fully-specialized. Classes can be fully
+and partially specialized. Consider:
+
+<pre>
+// base
+template<class T> class X {}
+// partially
+template<class T> class X<T*> {}
+// fully
+template<> class X<int> {}
+
+
+//base
+template<class T> void f(T) {}
+//base, overload
+template<class T> void f(T*) {}
+// fully
+template<> void f<int>(int)
+
+//plain, old
+void f(double)
+</pre>
+
+When resolving overloading, only care about first-class non-template functions
+and base-template functions. Once a base-template function is selected, we
+then look for any specialized can be used.
+
 ## Java
 
 Support.
