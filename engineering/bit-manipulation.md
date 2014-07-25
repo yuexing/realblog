@@ -31,10 +31,10 @@ Bit manipulation has been popular as with binary system.
     multi(a, b):
         if(!b || !a) return 0;
         while(b) {
-            a <<= 1
             if( b&1 ) {
                 res += a
             }
+            a <<= 1
             b <<= 1
         }
  </pre>
@@ -72,6 +72,7 @@ Bit manipulation has been popular as with binary system.
             if(mid * mid > a) right = mid
         }
  </pre>
+Or for sqrt, you may use Newton method, x = (a/x + x) / 2.
  - round{up/down}
  <pre>
     roundup(a, b):
@@ -79,3 +80,7 @@ Bit manipulation has been popular as with binary system.
     rounddown(a, b):
         (a - (1<<b) +1) >> b << b
  </pre>
+
+- a^b
+    a = (a & (~b)) 
+    (a | b)

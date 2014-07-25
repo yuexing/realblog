@@ -89,7 +89,7 @@ call    __cxa_throw
 
 which will:
 
-- walk the stack with the help of the exception tables untile it finds a
+- walk the stack with the help of the exception tables until it finds a
   handler for the exception;
 - unwind the stack (call destructors on the way) until it gets to that handler
 - call the handler
