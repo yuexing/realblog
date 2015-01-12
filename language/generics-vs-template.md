@@ -1,10 +1,43 @@
 # Generics vs Templates 
 
-## Introduction
+## C++
 
 C++ has the template, which works as a fancy search-and-replace machanism.
 When you call func<mytype>, the compiler with search all uses of 'T' inside
 func and replace them with 'string', then compiles the resulting source code.
+
+<pre>
+template <class T> struct A { }
+</pre>
+
+### specialization
+
+* explicit/fully:
+
+<pre>
+template<> struct A<int> {}
+</pre>
+
+* partial:
+
+<pre>
+template<class T> struct A<T*> {}
+</pre>
+
+### instantiation
+
+* implicit
+
+<pre>
+template<class T=float>
+struct A {}
+</pre>
+
+* explicit:
+
+<pre>
+template A<char>;
+</pre>
 
 ## Java
 
