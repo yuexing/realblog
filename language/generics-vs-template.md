@@ -20,7 +20,9 @@ way on runtime information, including:
 - new T()       : type creation
 - new T[size]   : array creation
 - T.class       : class quering
-- instanceof List<String>
+- instanceof List&lt;String&gt;
+
+
 ### Function
     - fn = function_t:
        * name  = 
