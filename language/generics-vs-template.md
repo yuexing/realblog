@@ -7,7 +7,7 @@ When you call func<mytype>, the compiler with search all uses of 'T' inside
 func and replace them with 'string', then compiles the resulting source code.
 
 <pre>
-template <class T> struct A { }
+template &lt;class T&gt; struct A { }
 </pre>
 
 ### specialization
@@ -15,13 +15,13 @@ template <class T> struct A { }
 * explicit/fully:
 
 <pre>
-template<> struct A<int> {}
+template&lt;&gt; struct A&lt;int&gt; {}
 </pre>
 
 * partial:
 
 <pre>
-template<class T> struct A<T*> {}
+template&lt;class T&gt; struct A&lt;T*&gt; {}
 </pre>
 
 ### instantiation
@@ -29,14 +29,14 @@ template<class T> struct A<T*> {}
 * implicit
 
 <pre>
-template<class T=float>
+template&lt;class T=float&gt;
 struct A {}
 </pre>
 
 * explicit:
 
 <pre>
-template A<char>;
+template A&lt;char&gt;;
 </pre>
 
 ## Java
