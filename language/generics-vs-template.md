@@ -23,48 +23,48 @@ way on runtime information, including:
 - instanceof List<String>
 ### Function
     - fn = function_t:
-        name  = 
-        id    =
-        dflags=
-        memberOfClass = 
-        access=
-        type  = function_type_t:
-            return    = 
-            parameter =
+       * name  = 
+       * id    =
+       * dflags=
+       * memberOfClass = 
+       * access=
+       * type  = function_type_t:
+            - return    = 
+            - parameter =
         ...
     - inits:
     - body:
 
 ### Declaration
      - var = local_variable_t:
-        name    = 
-        dflags  =
-        type    =
+        * name    = 
+        * dflags  =
+        * type    =
     - init = IN_expr:
-        expr    =
+        * expr    =
 
 ### E_new
     - type = <pointer to the type of the created obj>
     - info = JavaNewInfo
-        init = IN_ctor
-            ctorVar = function_t:
-            args    =
-            capturedLocalArgs = 
-        objType = class_type_t:
+        * init = IN_ctor
+            - ctorVar = function_t:
+            - args    =
+            - capturedLocalArgs = 
+        * objType = class_type_t:
 
 ### E_funcCall
     - type = <return type>
     - func = E_variable:
-        type = function_type_t:
-        var  = function_t:
+        * type = function_type_t:
+        * var  = function_t:
     - args
 
 ### E_box
     - type      = 
     - expr      = 
     - boxData   = JavaBoxData:
-        boxMethod = function_t:
-            name = java.lang.Integer.valueOf(int)java.lang.Integer
+        * boxMethod = function_t:
+            - name = java.lang.Integer.valueOf(int)java.lang.Integer
 
 ## CSharp
 
@@ -75,35 +75,35 @@ CSharp does not allow raw type and permits those limitations(in Java) in runtime
 
 ### Declaration
     - var   = local_variable_t:
-        name    = 
-        dflags  =
-        type    = pointer_type_t:
-            pointed_to = generic_instance_type_t:
-                class = class_type_t:
-                    name = System.Collections.Generic.List`1
-                    typeParameterCount = 1
-                arguments = {
+        * name    = 
+        * dflags  =
+        * type    = pointer_type_t:
+            - pointed_to = generic_instance_type_t:
+                * class = class_type_t:
+                    - name = System.Collections.Generic.List`1
+                    - typeParameterCount = 1
+                * arguments = {
                     arg = ...
                 }
     - init = IN_expr:
-        expr    = 
+        * expr    = 
 
 ### E_new
     - type = pointer_type_t:
-        pointed_to = generic_instance_type_t:
+        * pointed_to = generic_instance_type_t:
             ...
     - info = CSharpNewInfo:
-        init = IN_ctor
-            ctorVar = function_t:
-            args    =
-            capturedLocalArgs = 
-        objType = generic_instance_type_t
+        * init = IN_ctor
+            - ctorVar = function_t:
+            - args    =
+            - capturedLocalArgs = 
+        * objType = generic_instance_type_t
 
 ### E_funcCall
     - type = <return type>
     - func = E_variable
-        type = function_type_t (with instantialized type):
-        var  = function_t (with generic_parameter_Type_t indexed to
+        * type = function_type_t (with instantialized type):
+        * var  = function_t (with generic_parameter_Type_t indexed to
 typeArguments):
-        typeArguments = 
+        * typeArguments = 
     - args 
