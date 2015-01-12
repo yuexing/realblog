@@ -103,7 +103,6 @@ CSharp does not allow raw type and permits those limitations(in Java) in runtime
     - type = <return type>
     - func = E_variable
         * type = function_type_t (with instantialized type):
-        * var  = function_t (with generic_parameter_Type_t indexed to
-typeArguments):
+        * var  = function_t (with generic_parameter_Type_t indexed to typeArguments):
         * typeArguments = 
     - args 
