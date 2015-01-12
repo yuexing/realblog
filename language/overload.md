@@ -49,19 +49,19 @@ and partially specialized. Consider:
 
 <pre>
 // base
-template<class T> class X {}
+template&lt;class T&gt; class X {}
 // partially
-template<class T> class X<T*> {}
+template&lt;class T&gt; class X<T*> {}
 // fully
-template<> class X<int> {}
+template&lt;&gt; class X<int> {}
 
 
 //base
-template<class T> void f(T) {}
+template&lt;class T&gt; void f(T) {}
 //base, overload
-template<class T> void f(T*) {}
+template&lt;class T&gt; void f(T*) {}
 // fully
-template<> void f<int>(int)
+template&lt;&gt; void f<int>(int)
 
 //plain, old
 void f(double)
