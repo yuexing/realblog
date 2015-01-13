@@ -1,5 +1,16 @@
 # IOS DEV
 
+## The spotlight
+
+Simple commands can lead to unexpected result because of the 'mdworker'.
+
+<pre>
+$ rm -rf repo
+$ svn co <repo-svn-path>
+</pre>
+
+Thus, when a lot of filesystem work is involved, disable spotlight for a moment. http://osxdaily.com/2007/03/22/how-to-completely-disable-spotlight/.
+
 ## How to install app to device
 
 * connect the device
