@@ -55,13 +55,13 @@ We need to tell the loader it is available for use by updating the cache:
 
 The default GNU loader, ld.so, looks for libraries in the following order:
 
-*It looks in the DT_RPATH section of the executable, unless there is a DT_RUNPATH
+* It looks in the DT_RPATH section of the executable, unless there is a DT_RUNPATH
 section.
-*It looks in LD_LIBRARY_PATH. This is skipped if the executable is setuid/setgid
+* It looks in LD_LIBRARY_PATH. This is skipped if the executable is setuid/setgid
 for security reasons.
-*It looks in the DT_RUNPATH section of the executable unless the setuid/setgid
+* It looks in the DT_RUNPATH section of the executable unless the setuid/setgid
 bits are set (for security reasons).
-*It looks in the cache file /etc/ld/so/cache (disabled with the ‘-z nodeflib’
+* It looks in the cache file /etc/ld/so/cache (disabled with the ‘-z nodeflib’
 linker option).
-*It looks in the default directories /lib then /usr/lib (disabled with the ‘-z 
+* It looks in the default directories /lib then /usr/lib (disabled with the ‘-z 
 nodeflib’ linker option).
