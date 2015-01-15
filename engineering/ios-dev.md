@@ -11,6 +11,27 @@ $ svn co <repo-svn-path>
 
 Thus, when a lot of filesystem work is involved, disable spotlight for a moment. http://osxdaily.com/2007/03/22/how-to-completely-disable-spotlight/.
 
+## Compile and Linker Issues
+
+http://forums.xamarin.com/discussion/14802/error-mt5309-when-building-for-device-but-not-on-simulator
+
+## The ARM
+
+Apple uses arm from ARMv6 to ARMv8, but they do have their own ARMv7s.
+
+Thumb is a shorthand version of ARM code, 16-bit instead of regular 32-bit. 
+ARM and Thumb instructions cannot be freely intermixed, the processor needs to 
+switch mode when going from one to the other; this can only occur when calling 
+or returning from a function. So a function has to either be Thumb or ARM as a whole.
+
+ARMv8 is applied from IOS 5s. (http://iossupportmatrix.com/)
+
+For simulator, it is using x86 instead.
+
+Moreover, ARM requires alignment.
+
+Reference: http://wanderingcoder.net/2010/07/19/ought-arm/
+
 ## How to install app to device
 
 * connect the device
@@ -42,3 +63,4 @@ For xcode 6.0:
 ### for memory leak
 
 ### for ...
+http://jimkubicek.com/blog/2013/04/23/debugging-memory-smashers/
