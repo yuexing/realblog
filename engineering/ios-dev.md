@@ -62,5 +62,12 @@ For xcode 6.0:
 
 ### for memory leak
 
+* name the .m to .mm, then you are able to code in cpp
+* create a sub-project as a static library, add as 'Build Phases' -> 'Target dependencies',
+  also add its .a to 'Build Phases' -> 'Link Binary With Libraries'
+* It is able to detect leaks and cycle reference
+
+Moreover, currently apple store reject dynamic library due to security.
+
 ### for ...
 http://jimkubicek.com/blog/2013/04/23/debugging-memory-smashers/

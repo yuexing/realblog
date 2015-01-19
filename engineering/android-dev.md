@@ -19,6 +19,9 @@
 * When importing an library, check "Build Path" -> "Order and Export"
 * When creating an activity, also add to "AndroidManifest.xml"
 * When using android v7 support, add to "Properties" -> "Android" -> "Library(Split DEX file)"
+* ListView and ListAdapter: a view has an adapter to getView so that layoutChildren. When
+the underlying of the adapter changes, adapter.notifyDataSetChanged() should be called to
+notify the datasetObserver.onChanged(), which will update the mItemCount = adapter.getCount().
 
 ## Test
 
