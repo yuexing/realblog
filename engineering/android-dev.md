@@ -30,3 +30,7 @@ notify the datasetObserver.onChanged(), which will update the mItemCount = adapt
 <pre>
 adb shell monkey --throttle 500 -s 25 -p com.sgiggle.staging --ignore-crashes --ignore-timeouts --ignore-native-crashes --ignore-security-exceptions --pct-anyevent 5 --pct-syskeys 0 -v -v 150000 >monkey.log 2>&1
 </pre>
+
+* all the activities
+
+adb shell dumpsys activity
