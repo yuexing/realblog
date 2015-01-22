@@ -17,8 +17,12 @@
 ## Pitfalls
 
 * When importing an library, check "Build Path" -> "Order and Export"
+
 * When creating an activity, also add to "AndroidManifest.xml"
+  - the 'android:name', when starting with a period, means to append to 'manifest->package'
+
 * When using android v7 support, add to "Properties" -> "Android" -> "Library(Split DEX file)"
+
 * ListView and ListAdapter: a view has an adapter to getView so that layoutChildren. When
 the underlying of the adapter changes, adapter.notifyDataSetChanged() should be called to
 notify the datasetObserver.onChanged(), which will update the mItemCount = adapter.getCount().
@@ -49,7 +53,18 @@ adb shell dumpsys activity
 
 * Notification 
 
-- Intent
+- PendingIntent
+- has to setSmallIcon which is required, otherwise the notification doesnot show
 
-* PendingIntent
+* PendingIntent VS. Intent
 
+Intent
+
+- perform action on data
+- The primary pieces of information are: action, data
+- It can also contains: type (of the data), component, extra, category
+
+PendingIntent
+
+- give to system (NotificationManager, AlarmManager, etc.) to execute code later
+as yourself
