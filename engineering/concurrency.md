@@ -30,6 +30,10 @@ Session, Context and Application are shared.
 If there are cases that 'f' is accessed(read/write) guarded by 'g', then
 probably every case should do so.
 
+In the case of posting all the implementation to a thread, except for the getter
+which has to be synced with the caller, use LOCK to protect those fields, especially
+those cannot be atomatically changed.
+
 ## Lock
 
 Lock can be divided into by whether it can not acquired recursively:
@@ -93,3 +97,36 @@ The typical deadlock pattern: mutual-exclusive; hold-and-wait-for-each-other.
 
 As if there is no lock.
 
+## Condition
+
+'Clever' engineers want to make an advanced-version of C&P:
+
+Customer:
+
+<pre>
+while(count <= 0) {
+  c.wait();
+}
+if(count == max) {
+  p.notify();  
+}
+--count;
+</pre>
+
+Producer:
+<pre>
+while(count >= max) {
+  p.wait();
+}
+if(count == 0) {
+  c.notify();
+}
+++count;
+</pre>
+
+This is incorrect considering the case:
+
+* 3 customers, 3 producers, 2 slots
+* 3 customers come first
+* then 3 producers, only the 1st customer gets notified because (count == 0) and there
+will be 2 customers get stuck
