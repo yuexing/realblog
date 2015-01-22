@@ -31,6 +31,25 @@ notify the datasetObserver.onChanged(), which will update the mItemCount = adapt
 adb shell monkey --throttle 500 -s 25 -p com.sgiggle.staging --ignore-crashes --ignore-timeouts --ignore-native-crashes --ignore-security-exceptions --pct-anyevent 5 --pct-syskeys 0 -v -v 150000 >monkey.log 2>&1
 </pre>
 
+## Tips
+
 * all the activities
 
 adb shell dumpsys activity
+
+* Service
+
+- A Service is running in the main thread and thus should not do anything expensive;
+- IntentService 
+- onTaskRemoved
+
+* HandlerThread
+
+- Looper and Handler
+
+* Notification 
+
+- Intent
+
+* PendingIntent
+
