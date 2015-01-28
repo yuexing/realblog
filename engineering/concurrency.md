@@ -130,3 +130,7 @@ This is incorrect considering the case:
 * 3 customers come first
 * then 3 producers, only the 1st customer gets notified because (count == 0) and there
 will be 2 customers get stuck
+
+## Tips
+
+* slice fields and protect them use a proper lock
