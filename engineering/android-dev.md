@@ -43,28 +43,27 @@ adb shell dumpsys activity
 
 * Service
 
-- A Service is running in the main thread and thus should not do anything expensive;
-- IntentService 
-- onTaskRemoved
+	- A Service is running in the main thread and thus should not do anything expensive;
+	- IntentService 
+	- onTaskRemoved
 
 * HandlerThread
 
-- Looper and Handler
+	- Looper and Handler
 
 * Notification 
 
-- PendingIntent
-- has to setSmallIcon which is required, otherwise the notification doesnot show
+	- PendingIntent
+	- has to setSmallIcon which is required, otherwise the notification doesnot show
 
 * PendingIntent VS. Intent
 
-Intent
+ - Intent
 
-- perform action on data
-- The primary pieces of information are: action, data
-- It can also contains: type (of the data), component, extra, category
+	- perform action on data
+	- The primary pieces of information are: action, data
+	- It can also contains: type (of the data), component, extra, category
 
-PendingIntent
+ - PendingIntent
 
-- give to system (NotificationManager, AlarmManager, etc.) to execute code later
-as yourself
+	- give to system (NotificationManager, AlarmManager, etc.) to execute code later as yourself
