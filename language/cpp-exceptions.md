@@ -43,13 +43,13 @@ int main()
         try {
             throw B();
         } catch(A &a) {
-            cout << "Caught an A" << endl;
+            cout &lt;&lt; "Caught an A" &lt;&lt; endl;
             throw a;
         }
     } catch(B &b) {
-        cout << "Caught a B" << endl;
+        cout &lt;&lt; "Caught a B" &lt;&lt; endl;
     } catch(A &a) {
-        cout << "Caught an A again" << endl;
+        cout &lt;&lt; "Caught an A again" &lt;&lt; endl;
     }
 }
 </pre>

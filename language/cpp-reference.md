@@ -20,9 +20,9 @@ Case 1: The compiler optimize '&r == 0' to 'false':
 void test1() {
     int &r = *(int*)0;
     if( &r == 0) {
-        cout << "NULL" << endl;
+        cout &lt;&lt; "NULL" &lt;&lt; endl;
     } else {
-        cout << "Not NULL" << endl;
+        cout &lt;&lt; "Not NULL" &lt;&lt; endl;
     }
 }
 </pre>
@@ -48,7 +48,7 @@ void test2() {
     C *c = 0;
     C &cr = *c;
     B *b = &cr;
-    cout << "b = " << (void *)b << endl;
+    cout &lt;&lt; "b = " &lt;&lt; (void *)b &lt;&lt; endl;
 }
 </pre>
 

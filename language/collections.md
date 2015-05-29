@@ -46,7 +46,7 @@ related classes.
 - java.util.concurrent.BlockingQueue 
 - provides additional insertion, extraction, and inspection operations. Each
   of these methods exsits in two forms: throws and exception or return a
-  special value on falure. The later case is designed specially for use with
+  special value on failure. The later case is designed specially for use with
   capacity-restricted Queue implementation.
 
 #### java.util.Deque
@@ -86,7 +86,7 @@ Most collection types inherits from System.Collections.IEnumerable, and most
 iterator types inherits from System.Collections.IEnumerator. 
 
 Also, if you have a class containing the GetEnumerator, then it can be
-considered as a collection type. See [foreach|foreach.md] for details.
+considered as a collection type. See [foreach](foreach.md) for details.
 
 Moreover, for an iterator block:
 

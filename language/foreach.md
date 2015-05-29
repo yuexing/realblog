@@ -2,7 +2,7 @@
 
 or the so called S_enhancedFor.
 
-This article displays the difference in the implementation of S_enhancedFor
+This article displays the difference in the implementation of S_enhancedFor 
 between Java and CSharp and the foreach oddity in CSharp.
 
 ## CSharp
@@ -142,9 +142,8 @@ However, you would be wrong. The C# compiler detects that the foreach loop is
 iterating over a string and simply generates
 
 <pre>
-for(int index = 0; index < str.Length; ++index) {
+for(int index = 0; index &lt; str.Length; ++index) {
   char ch = str[index];
-  { ... }
 }
 </pre>
 
