@@ -4,9 +4,9 @@
 
 ### Order of Implicit Conversion
 
-1 zero or one standard conversion sequence
-2 zero or one user-defined conversion
-3 zero or one standard conversion sequence
+- zero or one standard conversion sequence
+- zero or one user-defined conversion
+- zero or one standard conversion sequence
 
 Only one standard conversion sequence is allowed when considering the argument 
 to a constructor or to a user-defined conversion function, or considering
@@ -16,9 +16,9 @@ NB: contextually convertible to bool is different from implicit conversion.
 
 ### Order of Standard Conversion Sequence
 
-1 zero or one lvalue transformation
-2 zero or one numberic promotion or numberic conversion
-3 zero or one qualification adjustment
+- zero or one lvalue transformation
+- zero or one numberic promotion or numberic conversion
+- zero or one qualification adjustment
 
 #### Lvalue Transformation
 
@@ -86,9 +86,9 @@ int-to-unsigned-long-signed-extension, the result is wrong:
 unsigned long readLittleEndian(unsigned char *p)
 {
    return p[0] | 
-          (p[1] << 8) |
-          (p[2] << 16) |
-          (p[3] << 24);
+          (p[1] &lt;&lt; 8) |
+          (p[2] &lt;&lt; 16) |
+          (p[3] &lt;&lt; 24);
 }
 
 </pre>
