@@ -39,7 +39,16 @@ adb shell monkey --throttle 500 -s 25 -p com.sgiggle.staging --ignore-crashes --
 
 * all the activities
 
+<pre>
 adb shell dumpsys activity
+</pre>
+
+if there are multiple devices:
+
+<pre>
+$ adb devices
+$ adb -S device_name
+</pre>
 
 * Service
 
