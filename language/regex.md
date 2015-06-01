@@ -41,6 +41,10 @@
 	- *?
 	- *+
 
+- zero-length assertion
+	- anchor: ^, $, \b
+	- look-around: matches characters, but then gives up the match, returning only the result: match or no match. If it contains capturing groups then those groups will capture as normal and backreferences to them will work normally, even outside the lookahead.
+
 - lookbehind
 	- (?<!a)b, (?<=a)b
 
@@ -68,7 +72,7 @@
 #### Extended Reg Exp ([ERE](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap09.html#tag_09_04))
 
 - metacharactor
-- alernation, moreover returns the longest match
+- alernation: returns the longest match
 - shorthand
 - in some implementation, backreferences are the usual \1 through \9
 
@@ -77,9 +81,8 @@
 almost perl, except:
 
 - no lookbehind
-- no atomic group, possessive qualifier
+- no named capturing group, branch reset group, atomic group, possessive qualifier
 - no unicode
-- no named capturing group
 - only /gim
 - no conditional
 
@@ -95,4 +98,5 @@ almost perl, except:
 
 ## Regex tools
 
-- [RegexBuddy](http://www.regexbuddy.com/)
+- [Regex101](https://regex101.com/): only has javascript, python, php
+- [RegexPlanet](http://www.regexplanet.com/): go, perl, etc.
