@@ -2,9 +2,14 @@
 
 ## C++
 
-C++ has the template, which works as a fancy search-and-replace machanism.
-When you call func<mytype>, the compiler with search all uses of 'T' inside
-func and replace them with 'string', then compiles the resulting source code.
+C++ has the template, which works as a fancy macro machanism.
+When you call func&lt;mytype&gt; (or through [template argument decuction](http://en.cppreference.com/w/cpp/language/template_argument_deduction)), 
+the compiler with search all uses of 'T' inside
+func and replace them with 'mytype', then compiles the resulting source code.
+
+Note:
+- instantiation can happen during link time. Linker calls compiler to compile the generated code;
+- whether the implementation can eliminate multiple instantiation is not defined;
 
 <pre>
 template &lt;class T&gt; struct A { }
