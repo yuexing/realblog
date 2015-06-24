@@ -3,16 +3,16 @@
 <pre>
 	class s_t {
 	public:
-		s_t() {cout << "s_t()" << endl;}
-		~s_t() {cout << "~s_t()" << endl;}
-		s_t(const s_t& ) {cout << "s_t(s_t)" << endl;}
+		s_t() {cout &lt;&lt; "s_t()" &lt;&lt; endl;}
+		~s_t() {cout &lt;&lt; "~s_t()" &lt;&lt; endl;}
+		s_t(const s_t& ) {cout &lt;&lt; "s_t(s_t)" &lt;&lt; endl;}
 
-		s_t& bar() {cout << "bar" << endl; return *this;}
+		s_t& bar() {cout &lt;&lt; "bar" &lt;&lt; endl; return *this;}
 	};
 
 	s_t foo(const s_t& s)
 	{
-		cout << "before return" << endl;
+		cout &lt;&lt; "before return" &lt;&lt; endl;
 		return s;
 	}
 </pre>
@@ -21,9 +21,9 @@
 Example1:
 
 <pre>
-	cout << "call foo" << endl;
+	cout &lt;&lt; "call foo" &lt;&lt; endl;
 	foo(s);
-	cout << "end call foo" << endl;
+	cout &lt;&lt; "end call foo" &lt;&lt; endl;
 </pre>
 
 outputs:
@@ -40,9 +40,9 @@ end call foo
 Example2:
 
 <pre>
-cout << "call foo" << endl;
+cout &lt;&lt; "call foo" &lt;&lt; endl;
 s_t s1 = foo(s);
-cout << "end call foo" << endl;
+cout &lt;&lt; "end call foo" &lt;&lt; endl;
 </pre>
 
 outputs:
@@ -59,9 +59,9 @@ end call foo
 Example3:
 
 <pre>
-cout << "call foo" << endl;
+cout &lt;&lt; "call foo" &lt;&lt; endl;
 s_t s1 = foo(s).bar();
-cout << "end call foo" << endl;
+cout &lt;&lt; "end call foo" &lt;&lt; endl;
 </pre>
 
 outputs:
