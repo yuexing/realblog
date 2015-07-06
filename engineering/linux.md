@@ -46,3 +46,30 @@ Note:
 -  && and || in scripts work based on success not on the return value
 - to group use '{}', '()' execute commands in a sub-shell
 
+
+### Useful command
+
+- lsof: open sockets and files.
+- set -/+x: for debug
+- uniq: -u: only not repeated lines, -d: only repeated lines
+- cut/join
+- To replace all occurrences of a string in place, in one or more files:
+
+<pre>
+      perl -pi.bak -e 's/old-string/new-string/g' $files
+</pre>
+
+- diff/patch/diffstat
+- strings
+- grep: -o: only the matching part
+- sort: -n: by numberic value, -r: reverse
+- tr
+
+
+### Install from scratch
+
+- when ./configure fails, try:
+
+<pre>
+	./autogen.sh && ./configure && make
+</pre>
