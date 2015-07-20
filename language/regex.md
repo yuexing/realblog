@@ -1,6 +1,7 @@
 ## Important Concept in Regex
 
 - [unicode](../trivial/encoding.md) support
+
 	-\P[L/M]: category of letter, mark
 	-\X: a dot in non-unicode
 

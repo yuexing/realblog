@@ -47,7 +47,10 @@ if there are multiple devices:
 
 <pre>
 $ adb devices
-$ adb -S device_name
+$ adb -s device_name logcat
+$ adb -s device_name logcat -c # clear the log buffer
+$ adb -s device_name logcat -d # dump the log buffer
+$ adb -s device_name shell am start -a "android.intent.action.VIEW" -d "tango://logenable/q?contacts=trace"
 </pre>
 
 * Service
