@@ -71,3 +71,23 @@ Moreover, currently apple store reject dynamic library due to security.
 
 ### for ...
 http://jimkubicek.com/blog/2013/04/23/debugging-memory-smashers/
+
+
+### How to clean up Xcode
+
+- clean up the settings
+
+<pre>
+$ defaults delete com.apple.dt.Xcode
+$ rm -rf Library/Developer/Xcode
+</pre>
+
+- clean up the cache
+
+<pre>
+$ rm -rf ~/Library/Developer/Xcode/DerivedData
+$ rm -rf "$(getconf DARWIN_USER_CACHE_DIR)/org.llvm.clang/ModuleCache"
+$ rm -rf ~/Library/Caches/com.apple.dt.Xcode
+</pre>
+
+- iOS Simulator > Reset Content and Settings.
