@@ -79,7 +79,8 @@ http://jimkubicek.com/blog/2013/04/23/debugging-memory-smashers/
 
 <pre>
 $ defaults delete com.apple.dt.Xcode
-$ rm -rf Library/Developer/Xcode
+$ rm -rf ~/Library/Developer/Xcode
+$ find  ~/Library/Preferences -name '*code*'  
 </pre>
 
 - clean up the cache
