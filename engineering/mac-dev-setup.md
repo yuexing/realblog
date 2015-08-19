@@ -21,3 +21,10 @@ $ chsh -s /bin/zsh
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
 </pre> 
+
+- python
+
+<pre>
+$ sudo easy_install pip
+$ sudo pip install ipython
+</pre>
