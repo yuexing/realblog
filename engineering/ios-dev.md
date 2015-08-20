@@ -11,10 +11,6 @@ $ svn co <repo-svn-path>
 
 Thus, when a lot of filesystem work is involved, disable spotlight for a moment. http://osxdaily.com/2007/03/22/how-to-completely-disable-spotlight/.
 
-## Compile and Linker Issues
-
-http://forums.xamarin.com/discussion/14802/error-mt5309-when-building-for-device-but-not-on-simulator
-
 ## The ARM
 
 Apple uses arm from ARMv6 to ARMv8, but they do have their own ARMv7s.
@@ -23,8 +19,6 @@ Thumb is a shorthand version of ARM code, 16-bit instead of regular 32-bit.
 ARM and Thumb instructions cannot be freely intermixed, the processor needs to 
 switch mode when going from one to the other; this can only occur when calling 
 or returning from a function. So a function has to either be Thumb or ARM as a whole.
-
-ARMv8 is applied from IOS 5s. (http://iossupportmatrix.com/)
 
 For simulator, it is using x86 instead.
 
@@ -73,7 +67,7 @@ Moreover, currently apple store reject dynamic library due to security.
 http://jimkubicek.com/blog/2013/04/23/debugging-memory-smashers/
 
 
-### How to clean up Xcode
+## How to clean up Xcode
 
 - clean up the settings
 
@@ -92,3 +86,37 @@ $ rm -rf ~/Library/Caches/com.apple.dt.Xcode
 </pre>
 
 - iOS Simulator > Reset Content and Settings.
+
+
+## Mach-O and FAT
+
+Mach-O contains only one arch, while FAT contains more.
+
+xcrun allows us to:
+
+- have multiple versions of Xcode and use the tools from a specific Xcode version, considering have both Xcode 4.5 and Xcode 5, with xcode-select and xcrun you can choose to use the tools 
+
+
+Inspect the segment/section:
+
+<pre>
+% xcrun size -x -l -m a.out
+</pre>
+
+Inspect the Section Content:
+
+<pre>
+% xcrun otool -s __TEXT __text a.out 
+</pre>
+
+Inspect the referred library:
+
+<pre>
+% xcrun otool -L a.out
+</pre>
+
+Display symbols:
+
+<pre>
+% xcrun nm -nm a.out 
+</pre>
