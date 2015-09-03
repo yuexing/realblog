@@ -56,8 +56,11 @@ convert_float_array(PyObject *input, int size) {...}
 
 - types
 
+java proxy class (params: jstype, proxy->jni: javain, jni->proxy: javaout) 
 
-java i[nter]m[ediate] class (params: jstype, arg: javain, return: javaout) -> jni java declaration (param: jtype) -> jni cpp implementation (param: jni, arg: in, return: out)
+-> jni java(intermediary) declaration (param: jtype) : Just declaration, thus no furthur tansform
+
+-> jni cpp implementation (param: jni, arg: in, return: out)
 
 <pre>
 	/* Get return types */
