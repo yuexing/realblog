@@ -1,7 +1,7 @@
 # Valgrind Practice
 
 <pre>
-valgrind --leak-check=full --show-reachable=yes --error-limit=no --log-file=log ./a.out
+valgrind --leak-check=full --trace-children=yes --show-reachable=yes --error-limit=no --log-file=log ./a.out
 </pre>
 
 valgrind probably gives false positive, thus use:
