@@ -43,12 +43,61 @@ console.log("after");
 
 - movement: keyframe, rotate
 
+#### JsonP
+
+- JSON with padding
+
+    - to solve the same-origin-policy restriction
+
+<pre>
+script = document.createElement("script");
+script.type = "text/javascript";
+script.src = "http://www.someWebApiServer.com/some-data?callback=my_callback";
+</pre>
+
 ### Frameworks
 
 #### React
 
 - JSX: xml like extension to EcmaScript
 - EcmaScript: class, call spread, rest arguments, destructuring, etc.
+
+
+#### Webpack
+
+- commonJS: http://webpack.github.io/docs/commonjs.html
+
+- code spliting (chunks): http://webpack.github.io/docs/code-splitting.html
+
+- stylesheet: http://webpack.github.io/docs/stylesheets.html
+
+
+#### AngularJS
+
+- Directive: ng-model, ng-bind, ng-init
+
+- Expression:  {{ }}
+
+- ng-app, ng-controller, 
+
+<pre>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {});
+</pre>
+
+- ng-include
+
+#### Backbone
+
+- http://arturadib.com/hello-backbonejs/
+
+- very imperative
+
+#### String Template
+
+- logical less UI String with data
+
+- Mustache, Handlebars, jQuery, etc.
 
 #### RequireJS
 
