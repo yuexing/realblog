@@ -120,3 +120,9 @@ Display symbols:
 <pre>
 % xcrun nm -nm a.out 
 </pre>
+
+Inspect the logs of simulator:
+
+<pre>
+% tail -f ~/Library/Logs/CoreSimulator/{hash}/system.log
+</pre>
