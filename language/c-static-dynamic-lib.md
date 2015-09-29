@@ -65,3 +65,34 @@ bits are set (for security reasons).
 linker option).
 * It looks in the default directories /lib then /usr/lib (disabled with the ‘-z 
 nodeflib’ linker option).
+
+
+## How does the linker work?
+
+- read: http://eli.thegreenplace.net/2013/07/09/library-order-in-static-linking
+
+- the gcc and its equivalent tools will invoke linker. You can see by '-###'
+
+- the linker's algorithm:
+
+  - the linker keeps 2 list: import(undefined) list and export list
+
+  - once encounters a new object:
+
+    - symbols it exports: solve undefined, and reports 'multiple definition', add to exports
+
+    - symbols it imports: add to imports
+
+  - once encounters a new lib, for each obj:
+
+    - if it solves undefined: link as an object
+
+    - if any of the objects is linked, the lib is rescanned
+
+- based on the algorithm, to solve the circular dependency:
+
+  - order matters
+
+  - --start-group -lbar_dep -lfunc_dep -Wl,--end-group
+
+  - --undefined=bar

@@ -77,6 +77,12 @@ $ rm -rf ~/Library/Developer/Xcode
 $ find  ~/Library/Preferences -name '*code*'  
 </pre>
 
+- clean up the command lines
+
+<pre>
+$ rm -rf /Library/Developer/CommandLineTools
+</pre>
+
 - clean up the cache
 
 <pre>
@@ -126,3 +132,4 @@ Inspect the logs of simulator:
 <pre>
 % tail -f ~/Library/Logs/CoreSimulator/{hash}/system.log
 </pre>
+
