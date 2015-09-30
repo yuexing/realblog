@@ -96,7 +96,33 @@ $ rm -rf ~/Library/Caches/com.apple.dt.Xcode
 
 ## Desymbolize
 
-http://stackoverflow.com/questions/13574933/ios-crash-reports-atos-not-working-as-expected
+For a crash report:
+
+<pre>
+1   Tango 0x1006e84a0 0x10009c000 + 6603936
+2   Tango 0x1006e8258 0x10009c000 + 6603352
+3   Tango 0x10022a1dc 0x10009c000 + 1630684
+4   Tango 0x10022a514 0x10009c000 + 1631508
+...
+</pre>
+
+Notice that: 0x1006e84a0(runtime address) == 0x10009c000(runtime load address) + 6603936(offset). This is so-called [Address space layout randomization](https://en.wikipedia.org/wiki/Address_space_layout_randomization).
+
+- use the XXX.app.dSYM to desymbolize
+
+	- dwarfdump --uuid XXX.app.dSYM
+
+- find the start_address of the 'segname __TEXT' 
+
+	- otool -arch arm64 -l XXX.app.dSYM/Contents/Resources/DWARF/XXX | less
+
+- address_to_lookup = hex(offset) + start_address
+
+	- for i in $(grep 'XXX' stacktrace | cut -d '+' -f 2); do printf "0x%x " $(( i+0x100000000 )); done
+
+- decode now
+	
+	- atos -arch arm64 -o XXX.app.dSYM/Contents/Resources/DWARF/XXX <address_to_lookup>[ <address_to_lookup>]
 
 ## Mach-O and FAT
 
