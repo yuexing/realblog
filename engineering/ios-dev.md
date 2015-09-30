@@ -94,7 +94,7 @@ $ rm -rf ~/Library/Caches/com.apple.dt.Xcode
 
 - iOS Simulator > Reset Content and Settings.
 
-## Desymbolize
+## Symbolicate
 
 For a crash report:
 
