@@ -64,6 +64,7 @@ For xcode 6.0:
 Moreover, currently apple store reject dynamic library due to security.
 
 ### for ...
+
 http://jimkubicek.com/blog/2013/04/23/debugging-memory-smashers/
 
 
@@ -93,6 +94,9 @@ $ rm -rf ~/Library/Caches/com.apple.dt.Xcode
 
 - iOS Simulator > Reset Content and Settings.
 
+## Desymbolize
+
+http://stackoverflow.com/questions/13574933/ios-crash-reports-atos-not-working-as-expected
 
 ## Mach-O and FAT
 
@@ -101,7 +105,6 @@ Mach-O contains only one arch, while FAT contains more.
 xcrun allows us to:
 
 - have multiple versions of Xcode and use the tools from a specific Xcode version, considering have both Xcode 4.5 and Xcode 5, with xcode-select and xcrun you can choose to use the tools 
-
 
 Inspect the segment/section:
 
@@ -127,9 +130,18 @@ Display symbols:
 % xcrun nm -nm a.out 
 </pre>
 
-Inspect the logs of simulator:
+
+## Inspect the logs of simulator:
 
 <pre>
 % tail -f ~/Library/Logs/CoreSimulator/{hash}/system.log
 </pre>
 
+
+## iOS app size
+
+http://binvis.io/#/
+
+http://corte.si/%2Fposts/visualisation/entropy/index.html
+
+http://corte.si/%2Fposts/visualisation/binvis/index.html
