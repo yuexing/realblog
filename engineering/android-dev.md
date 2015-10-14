@@ -4,6 +4,8 @@
 
 * Tools:
 
+http://blog.frals.se/2014/07/02/building-and-running-valgrind-on-android/
+
 * Platform Tools:
 
 * Eclipse ADT plugin:
