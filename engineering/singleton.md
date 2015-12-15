@@ -9,10 +9,7 @@
 
 ### How to inject instead?
 
-- consider the object reference as a graph: 
-
-  - each module makes a sub-graph, and the starting point(class) of the sub-graph can be those Service classes. 
-    They'll hold the strong reference of the objects in the module
+  - generally, each module has a Service classes. They'll hold the strong reference of the objects in the module.
 
   <pre>
   // init
@@ -66,3 +63,14 @@
     });
   }
   </pre>
+
+### Inject all the object?
+
+We have so many classes, it's too much to inject all. So:
+
+- If the object has states, it needs to be injected.
+- If the object has member objects with states, it needs to be injected.
+
+Make the rule a little loose:
+
+- Only the user-related state is considered as the state. eg. the app is foreground or not is not a state and thus app_state_mgr can still be a singleton
