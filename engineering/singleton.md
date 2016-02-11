@@ -3,13 +3,14 @@
 ### Why it's bad?
 
 - dependency btw modules and within the module is hard to see. 
-	- hard to mock up dependency, eg. test, pull a moudle out
-	- shutting down is very fragile. Shutting down crash is reported in every release, 
-  - logout is impossible to be implemented confidently clean. if the object is not cleaned up, then the user'll probably be messed up with the states of the last user
+	- hard to estimate the effort to extract a module
+	- hard to mock up dependency, eg. for test
+	- shutting down is very fragile. Sequence is hard to determine, let alone in multi-thread env
+- logout is impossible to be implemented confidently clean. Highly probably the user'll probably be messed up with the states of the last user
 
 ### How to inject instead?
 
-  - generally, each module has a Service classes. They'll hold the strong reference of the objects in the module.
+  - generally, each module has a Service classes. They'll hold the strong reference of the objects inside the module.
 
   <pre>
   // init
@@ -29,7 +30,7 @@
   std::weak_ptr<sgiggle::contacts::ContactManager> m_contact_manager;
   </pre>
   
-  - others generally will hold weak reference for the injected object, and use by lock
+  - others generally only hold weak reference for the injected object, and use by lock
 
   <pre>
   // UserInfo
@@ -63,6 +64,8 @@
     });
   }
   </pre>
+
+  - for data-oriented object, eg. PhoneNumber, Contact, etc. which are used in lots of places, hard to inject the dependency. Make them POO (plain old object with setter/getter) and extract complex log to the PhoneNumberService/ContactService
 
 ### Inject all the object?
 
