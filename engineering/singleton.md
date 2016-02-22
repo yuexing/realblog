@@ -88,9 +88,39 @@
   virtual ~PhoneNumberService() = default;
  };
 
- class PhoneNumberServiceImpl {
+ class PhoneNumberServiceImpl : public PhoneNumberService {
  // implement with any dependency
  };
+  </pre>
+
+  - It becomes more complex for Contact, because it has two implementations.
+
+  <pre>
+  class Contact {
+    // ...
+    virtual std::string getDisplayName(const ContactService*) const = 0;
+    // ...
+  };
+  class TCContact {
+
+  }; // special contact for chat, eg. backed by fallback protobuf contact
+
+  class ContactImpl {
+     std::string getDisplayName(const ContactService* s) const override {
+      return static_cast<const ContactServiceImpl*>(s)->getDisplayName(*this);
+     }
+  };
+  class TCContactImpl {
+     std::string getDisplayName(const ContactService*) const override {
+      return m_contact_manager->getDisplayName(*get_contact());
+     }
+  };
+
+  class ContactServiceImpl {
+    std::string getDisplayName(const ContactImpl& c) const {
+      return m_contact_manager->getDisplayName(c);
+    }
+  };
   </pre>
 
 ### Inject all the object?
