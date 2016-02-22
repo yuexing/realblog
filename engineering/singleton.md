@@ -67,6 +67,32 @@
 
   - for data-oriented object, eg. PhoneNumber, Contact, etc. which are used in lots of places, hard to inject the dependency. Make them POO (plain old object with setter/getter) and extract complex log to the PhoneNumberService/ContactService
 
+  <pre>
+  class PhoneNumber {
+  public:
+  // getters and setters
+  private:
+    std::string m_countryCode;
+    std::string m_subscriberNumber;
+    sgiggle::corefacade::util::PhoneTypeEnum m_phoneType;
+  } ;
+
+  class PhoneNumberService {
+  public:
+  // Returns phone number with plus sign and country code in human-readable format
+  // ex. +1 (917) 376-9956
+  virtual std::string getFormattedString(const PhoneNumber& ph) const = 0;
+
+  // ...
+  
+  virtual ~PhoneNumberService() = default;
+ };
+
+ class PhoneNumberServiceImpl {
+ // implement with any dependency
+ };
+  </pre>
+
 ### Inject all the object?
 
 We have so many classes, it's too much to inject all. So:
