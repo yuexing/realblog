@@ -98,28 +98,22 @@
   <pre>
   class Contact {
     // ...
-    virtual std::string getDisplayName(const ContactService*) const = 0;
+    virtual std::string getDisplayName(const ContactHelpService*) const = 0;
     // ...
   };
-  class TCContact {
+  class TCContact : public Contact{
 
   }; // special contact for chat, eg. backed by fallback protobuf contact
 
-  class ContactImpl {
-     std::string getDisplayName(const ContactService* s) const override {
-      return static_cast<const ContactServiceImpl*>(s)->getDisplayName(*this);
+  class ContactImpl : public Contact{
+     std::string getDisplayName(const ContactHelpService* s) const override {
+      return static_cast<const ContactHelpServiceImpl*>(s)->getContactManager()->getDisplayName(*this);
      }
   };
-  class TCContactImpl {
-     std::string getDisplayName(const ContactService*) const override {
+  class TCContactImpl : public TCContact{
+     std::string getDisplayName(const ContactHelpService*) const override {
       return m_contact_manager->getDisplayName(*get_contact());
      }
-  };
-
-  class ContactServiceImpl {
-    std::string getDisplayName(const ContactImpl& c) const {
-      return m_contact_manager->getDisplayName(c);
-    }
   };
   </pre>
 
