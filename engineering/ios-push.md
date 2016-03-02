@@ -4,7 +4,7 @@
 
 to register remote push:
 
-From ios8:
+#### From ios8:
 
 <pre>
 - registerForRemoteNotifications
@@ -22,7 +22,7 @@ The first time your app launches and calls this method, the system asks the user
 -  application:didRegisterUserNotificationSettings: 
 </pre>
 
-Before ios8:
+#### Before ios8:
 
 <pre>
 - registerForRemoteNotificationTypes
