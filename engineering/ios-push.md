@@ -6,27 +6,27 @@ to register remote push:
 
 From ios8:
 
-{code}
+<pre>
 - registerForRemoteNotifications
-{code}
+</pre>
 
 it has callback for success and failure. To perform some user-facing actions, you must call the:
 
-{code}
+<pre>
 - registerUserNotificationSettings:
-{code}
+</pre>
 
 The first time your app launches and calls this method, the system asks the user whether your app should be allowed to deliver notifications and stores the response. Thereafter, the system uses the stored response to determine the actual types of notifications you may use. The callback is always called:
 
-{code}
+<pre>
 -  application:didRegisterUserNotificationSettings: 
-{code}
+</pre><pre>
 
 Before ios8:
 
-{code}
+<pre>
 - registerForRemoteNotificationTypes
-{code}
+</pre>
 
 #### Loud Push
 
