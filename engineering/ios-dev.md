@@ -11,22 +11,6 @@ $ svn co <repo-svn-path>
 
 Thus, when a lot of filesystem work is involved, disable spotlight for a moment. http://osxdaily.com/2007/03/22/how-to-completely-disable-spotlight/.
 
-## The certificate, profile
-
-https://myonlineusb.wordpress.com/2011/06/19/what-are-the-differences-between-pem-der-p7bpkcs7-pfxpkcs12-certificates/
-
-- Certificate Signing Request (.certSigningRequest): will generate a key, and is used to generate the certificate. 
-
-- certificate (.cer) : contains the private key, exported as '.p12' (Personal Information Exchange)
-
-- pem (private enchance mail)
-
-<pre>
-openssl x509 -in xxx.cer -inform der -out xxx.pem
-
-openssl pkcs12 -nocerts -out yyy.pem -in yyy.p12
-</pre>
-
 ## The ARM
 
 Apple uses arm from ARMv6 to ARMv8, but they do have their own ARMv7s.
