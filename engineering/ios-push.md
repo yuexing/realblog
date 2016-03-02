@@ -32,17 +32,19 @@ The first time your app launches and calls this method, the system asks the user
 
 ##### From ios8:
 
-When clicking the remote notification to start the app, the notification is wrapped in the 'UIApplicationLaunchOptionsRemoteNotificationKey' of 'launchOptions' passed from launchApp:withLaunchOptions:, and 'didReceiveRemoteNotification' is also called.
+The user has to click the remote notification to start the app. Upon starting, the 'launchApp:withLaunchOptions:' is called with the notification wrapped in 'launchOptions'. Moreover, the 'didReceiveRemoteNotification' is also called.
 
 ##### Before ios8:
 
-When app is started due to push, the 'launchApp:withLaunchOptions:' is called without the notification. Followed by 'didReceiveRemoteNotification'.
+Same except for that: the 'launchApp:withLaunchOptions:' is called without the notification.
 
 #### Silent push
 
 The payload has 'content-available: 1'. 
 
-The app can be automatically launched if the user didn't kill the app. Moreover, 'didReceiveRemoteNotification' is called when the push is received.
+The app can be automatically launched if the user didn't kill the app. The 'launchApp:withLaunchOptions:' is called with the notification wrapped in 'launchOptions'. Moreover, the 'didReceiveRemoteNotification' is also called.
+
+When app is running, 'didReceiveRemoteNotification' is always called upon push.
 
 ### Voip push
 
