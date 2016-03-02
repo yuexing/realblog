@@ -20,7 +20,7 @@ The first time your app launches and calls this method, the system asks the user
 
 <pre>
 -  application:didRegisterUserNotificationSettings: 
-</pre><pre>
+</pre>
 
 Before ios8:
 
