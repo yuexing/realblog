@@ -4,7 +4,7 @@
 
 to register remote push:
 
-#### From ios8:
+##### From ios8:
 
 <pre>
 - registerForRemoteNotifications
@@ -22,7 +22,7 @@ The first time your app launches and calls this method, the system asks the user
 -  application:didRegisterUserNotificationSettings: 
 </pre>
 
-#### Before ios8:
+##### Before ios8:
 
 <pre>
 - registerForRemoteNotificationTypes
@@ -30,7 +30,11 @@ The first time your app launches and calls this method, the system asks the user
 
 #### Loud Push
 
+##### From ios8:
+
 When clicking the remote notification to start the app, the notification is wrapped in the 'UIApplicationLaunchOptionsRemoteNotificationKey' of 'launchOptions' passed from launchApp:withLaunchOptions:, and 'didReceiveRemoteNotification' is also called.
+
+##### Before ios8:
 
 When app is started due to push, the 'launchApp:withLaunchOptions:' is called without the notification. Followed by 'didReceiveRemoteNotification'.
 
