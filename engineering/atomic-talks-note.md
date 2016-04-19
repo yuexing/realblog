@@ -1,0 +1,20 @@
+- L1 / L2(3M)/ L3(16M)
+- assume: coherent
+- the truth
+  - opt(compiler/processor/cache)
+  - SC(sequential consistency) appear 
+  - race condition
+- Dekker's and Peterson's
+  - if...then...
+  - cache-effect (store buffer)
+- single-thread opt
+  - what compiler knows
+  - ... doesn't know: share
+  - tell it!
+- ordering:
+  - transaction: locks/atomics/transactional memory
+  - barrier: acquire/release/full-fence
+- implement:
+  - locks/atomic use the same instructions 
+  - atomics
+    - acquire/release

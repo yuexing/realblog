@@ -5,15 +5,6 @@
 Bad coding style introduces/propagates errors, increases global cost, and
 decreases readability. This article means to communicate best practices.
 
-Also, this article was somewhat inspired by some sentense seen from javadoc:
-
-<pre>
-In java, the local-sensitive classes provide a class method, getInstace, for
-getting a generally useful object of the type, for example,
-java.util.Calendar.getInstance returns a Calendar object whose calendar fields
-have been initialized with the current date and time.
-</pre>
-
 ## Syntax
 
 ### No physical tabs
@@ -36,27 +27,73 @@ its structure. Some programming language, eg. Python, mandate indentation.
 Use hard-break instead of soft-break as wrapping long lines is not a common
 default setting in most editors.
 
+### Function lines
+
+Try as much as possible to limit a function to a screen (~50 lines)
+
 ### Naming conventions
 
-under_score or CamelCase, but not mixed. There are cases for
+For under_score or CamelCase, but not mixed. There are cases for
 underscored_CamelCase, which is for very special thing.
+
+For file, no whitespace character and uppercases, prefer dash to underscore 
+which is hard to type. Use dot only for extension.
+
+Semantically: 
+
+- Adaptor
+
+- Bridge
+
+- Visitor
+
+- Manager
+
+- Service
+
+- Poller
+
+- 
 
 ### Include and Import
 
-### Function (Constructor) Definitions
+- For intra-module interfaces, use relative path, eg. '../module_helper.h';
 
-### Blank lines
+- For inter-module interfaces, link to a directory and specify in '-I'.
 
-Blank lines shows relatedness.
+### Class/Function Declarations/Definitions
 
-### Braces
+Open to scale, close to change.
 
-Another way for both Indentation and Relatedness.
+### Blank lines/ Braces
 
-## File naming
+- relatedness
 
-No whitespace character and uppercases, prefer dash to underscore which is hard to type.
-Use dot only for extension.
+- try not to eliminate 'Braces' for readers and writers. eg. '{}' in branches,
+'()' in expressions
+
+## Coding Practice
+
+### Variable Definition
+
+Definition requires proper initialization.
+
+<pre>
+std::vector&lt;int&gt;::const_iterator = v.end(); // default constructor can err
+</pre>
+
+<pre>
+template&lt;typename T&gt;
+void do() {
+  T a{};                                          // don't ever forget any local variable
+}
+</pre>
+
+### Strings/ const char* const
+
+### Post-to-a-thread/ lock/ atomic
+
+### Snapshot and diff
 
 ## Exception Handling
 
@@ -146,4 +183,5 @@ always leads to abort. Thus write a helpful suppressible assert function.
 
 ## Testing
 
-See in testsuite.
+See Testsuite.
+See Singleton.

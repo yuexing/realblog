@@ -2,8 +2,6 @@
 
 - install xcode and run 'xcode-select --install'
 
-- install Sizeup
-
 - use zsh
 
 <pre>
@@ -27,4 +25,21 @@ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local
 <pre>
 $ sudo easy_install pip
 $ sudo pip install ipython
+</pre>
+
+- enable coredump
+
+<pre>
+$ ulimit -c unlimited
+$ sudo mkdir /cores && sudo chown yxing /cores
+</pre>
+
+- gdb / lldb
+
+<pre>
+bt; thread apply all bt
+</pre>
+
+<pre>
+bt; bt all
 </pre>

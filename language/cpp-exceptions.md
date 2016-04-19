@@ -93,3 +93,9 @@ which will:
   handler for the exception;
 - unwind the stack (call destructors on the way) until it gets to that handler
 - call the handler
+
+- if no handler, std::terminate() is automatically called. Terminate is actually 
+a pointer to a function and default value is the Standard C library function std::abort().
+abort() can generate a core dump to understand why.
+
+- in multi-thread, the thread throwing exception would 'std::terminate()'.

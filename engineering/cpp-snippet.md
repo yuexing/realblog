@@ -26,19 +26,3 @@
 	EXPAND_AND_QUOTE_STRING(aname) // name
 }
 </pre>
-
-## Pack binary data into a string
-<pre>
-  char *PackData(char *c, void *ptr, size_t sz) {
-      static const char hex[17] = "0123456789abcdef";
-      const unsigned char *u = (unsigned char *) ptr;
-      const unsigned char *eu =  u + sz;
-      for (; u != eu; ++u) {
-        unsigned char uu = *u;
-        *(c++) = hex[(uu & 0xf0) >> 4];
-        *(c++) = hex[uu & 0xf];
-      }
-      return c;
-    }
-</pre>
-
