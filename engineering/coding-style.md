@@ -22,14 +22,10 @@ instead.
 Indentation is used for represent the program visually logically by reflecting
 its structure. Some programming language, eg. Python, mandate indentation.
 
-### Line length
+### Lines
 
 Use hard-break instead of soft-break as wrapping long lines is not a common
 default setting in most editors.
-
-### Function lines
-
-Try as much as possible to limit a function to a screen (~50 lines)
 
 ### Naming conventions
 
@@ -41,19 +37,44 @@ which is hard to type. Use dot only for extension.
 
 Semantically: 
 
-- Adaptor
+- Structural:
 
-- Bridge
+  - Adaptor: Through indirection, allows an existing interface to be used from Adapter interface. 
+Then whatever the existing interfaces changes, the code dependent on Adapter won't change.
 
-- Visitor
+  - Bridge: two orthogonal can vary independently, eg. abstraction(ThreadScheduler->ByTime, ByPriority) 
+and implementation (platform-oriented) 
 
-- Manager
+  - Proxy: indirection allows controll
 
-- Service
+  - Decorator: attach additional functionality at runtime
 
-- Poller
+  - Composite:  treat individual objects and compositions of objects uniformly. eg. Component -> Leaf/Composite.
 
-- 
+- Behavior:
+  
+  - Mediator: Presenter can be the Mediator btw View(Activity/ViewController) and Model. 
+  Decouple by 'Required'/'Provider' and injection, for furthur test
+
+  Controllers in MVC can also be shared between multiple Views. In MVP, the View and the Presenter have a one-to-one relationship.
+
+  A Repository mediates between the domain and data mapping layers, acting like an in-memory domain object collection
+
+  - Visitor
+
+  - Strategy
+
+  - Observor: Subject(controller) and Observer(view)
+
+  - State: Context wraps State
+
+  - Chain(pipeline): Handler::nextHandler, Handler::handle
+
+  - Command: 'execute' an 'action' on 'receiver'. 
+
+  - Iterator: generic programming
+
+- Context, Manager, Service
 
 ### Include and Import
 
@@ -63,7 +84,7 @@ Semantically:
 
 ### Class/Function Declarations/Definitions
 
-Open to scale, close to change.
+Open to extend, close to change.
 
 ### Blank lines/ Braces
 
