@@ -5,6 +5,16 @@
 Bad coding style introduces/propagates errors, increases global cost, and
 decreases readability. This article means to communicate best practices.
 
+## What's good code?
+
+- correct: hard to err, easy to argue; hygiene: conservative 
+- good performance
+- code should carry intention (not commenting)
+- open-close, grep-able, test-able, trace-able(think when you're debugging cluster),
+ assertive, scalable
+- err gracefully (recover, not fail)
+- tool-ing: learn once, apply/check everywhere
+
 ## Syntax
 
 ### No physical tabs
@@ -56,9 +66,9 @@ and implementation (platform-oriented)
   - Mediator: Presenter can be the Mediator btw View(Activity/ViewController) and Model. 
   Decouple by 'Required'/'Provider' and injection, for furthur test
 
-  Controllers in MVC can also be shared between multiple Views. In MVP, the View and the Presenter have a one-to-one relationship.
+    - Controllers in MVC can also be shared between multiple Views. In MVP, the View and the Presenter have a one-to-one relationship.
 
-  A Repository mediates between the domain and data mapping layers, acting like an in-memory domain object collection
+    - A Repository mediates between the domain and data mapping layers, acting like an in-memory domain object collection
 
   - Visitor
 
@@ -110,11 +120,30 @@ void do() {
 }
 </pre>
 
-### Strings/ const char* const
+### Launch Optimization
 
-### Post-to-a-thread/ lock/ atomic
+- static data initialization takes time: eg. const string/ const char* const
 
-### Snapshot and diff
+### Concurrency programming
+
+- post as much as possible to a thread
+- group lock
+
+### Callback
+
+- add/remove vs trigger; trigger has to be lock-free, thus copy needs trade-off if 
+not posted to the same thread
+- callback with diff: track updated, or calculate diff on-the-fly
+- batch callbacks
+
+- boilerplate code for Event, poller, batch-notify
+
+### Algorithms
+
+- base64: when binary string is not allowed, base64 can help, but always 1/3 larger(6*4 == 8*3).
+- backtrace(nice brute-force): move a step so that can revert. 
+- backpack(partial, 0/1, unlimited, k-limited)
+- palindrome
 
 ## Exception Handling
 
@@ -161,10 +190,6 @@ not to lose stacktrace.
 
 Use assertion as much as possible to state your certainty. However, original assert 
 always leads to abort. Thus write a helpful suppressible assert function.
-
-## Comments
-
-### Do not copy and past comments
 
 ## Class
 

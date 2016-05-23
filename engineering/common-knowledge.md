@@ -44,13 +44,18 @@
 
 ### Hash Table
 
-- size: large prime to avoid open-address failure
+- size: large prime (otherwise, the common divior of key and hash is cancelled thus easy to collide on a smaller range), N/load_factor.
 
 - load factor: avoid the collision
 
-- upon collision: list or open-address
+- upon collision:
 
   - open-address: quadratic probe, h(k,i) = h(k) + c1*i^2 + c2*i
+  - chaining
+
+- extensible hash:
+
+  - directory (hash the key to long bit string, keep as many as needed) 
 
 ### Cycle Detection
 
@@ -58,4 +63,34 @@
 
 ### Convex Hull
 
+- the line btw a and b is also in the Convex
+- can use multiply of vectors to decide whether a,b,c should evict b
+
 ### Parallel
+
+### Cache
+
+- write-through/write-back
+
+#### L1 Cache
+
+- set/line/blocks(in bytes)
+- map to set in the size of the block, to avoid evict, use line
+
+- Core i7 L1 Cache: 32k 8-way set associative
+  - E=8, e=3
+  - B=64, b=6
+  - S=2^15/2^9=2^6, s=6
+
+- Application: matrix multiply
+
+#### TLB (translation lookaside buffer)
+
+#### Paging Swap
+
+- rough LRU => not-recently-used by dirty flag
+
+#### Memcache
+
+- memcached
+- radis (twitter has central proxy)
