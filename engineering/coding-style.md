@@ -127,7 +127,7 @@ void do() {
 ### Concurrency programming
 
 - post as much as possible to a thread
-- group lock
+- group lock (by resources? by caller?)
 
 ### Callback
 
@@ -143,7 +143,7 @@ not posted to the same thread
 - base64: when binary string is not allowed, base64 can help, but always 1/3 larger(6*4 == 8*3).
 - backtrace(nice brute-force): move a step so that can revert. 
 - backpack(partial, 0/1, unlimited, k-limited)
-- palindrome
+- timer
 
 ## Exception Handling
 
