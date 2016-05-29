@@ -126,8 +126,10 @@ void do() {
 
 ### Concurrency programming
 
-- post as much as possible to a thread
+- post as much as possible to a thread, guard getter
 - group lock (by resources? by caller?)
+- No one can do singleton right without barriar!
+- Choose btw Sem(wait and notify is wrapped for a limit) and Cond(flag?)
 
 ### Callback
 
@@ -138,12 +140,22 @@ not posted to the same thread
 
 - boilerplate code for Event, poller, batch-notify
 
-### Algorithms
+### Algorithm and DS
 
-- base64: when binary string is not allowed, base64 can help, but always 1/3 larger(6*4 == 8*3).
+- encoding:
+  - float: http://www.johndcook.com/blog/2009/04/06/anatomy-of-a-floating-point-number/
+  - base64: when binary string is not allowed, base64 can help, but always 1/3 larger(6*4 == 8*3).
 - backtrace(nice brute-force): move a step so that can revert. 
-- backpack(partial, 0/1, unlimited, k-limited)
+- DP: eg. backpack(partial, 0/1, unlimited, k-limited)
 - timer
+- trees: binary-index tree, segment/interval tree, k-d tree, etc.
+
+### Security
+
+- certificate (containing server's public key, authority signed with private key)
+- auth-token (server-encrypted client-gened password), encrypt data with password
+- session-token
+- digest
 
 ## Exception Handling
 

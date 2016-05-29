@@ -20,3 +20,9 @@
 
 - usually in a cylinder
 - Superblock / directory / inode / block (12 direct + 1 singly-linked + 2 doubly-linked + 3 tribly-linked)
+
+### RAID
+
+- Redundant array of independent disk
+- digest (parity code)
+- data stripping/replica
