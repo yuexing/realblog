@@ -51,9 +51,9 @@ and partially specialized. Consider:
 // base
 template&lt;class T&gt; class X {}
 // partially
-template&lt;class T&gt; class X<T*> {}
+template&lt;class T&gt; class X&lt;T*&gt; {}
 // fully
-template&lt;&gt; class X<int> {}
+template&lt;&gt; class X&lt;int&gt; {}
 
 
 //base
@@ -61,7 +61,7 @@ template&lt;class T&gt; void f(T) {}
 //base, overload
 template&lt;class T&gt; void f(T*) {}
 // fully
-template&lt;&gt; void f<int>(int)
+template&lt;&gt; void f&lt;int&gt;(int)
 
 //plain, old
 void f(double)
