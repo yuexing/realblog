@@ -77,3 +77,84 @@
 
 - OO: 
   Perl provides a bless() function, which is used to return a reference which ultimately becomes an object.
+  
+  
+  
+  
+  ## old notes
+
+Ch2
+numbers are all double
+string is literal
+use warning; use strict;
+print “”.””  print “”, “”
+if elsif else
+while(<>) or while(<STDIN>) or open FD “file”; while(<FD>);
+chomp
+while, foreach (for), $_
+
+Ch3
+@arr[] = (1..2); @arr = qw(1 2 3); @arr=split; 
+@arr[1, -1]
+@arr = @arrb
+@#arr
+print “@arr”
+reverse sort cmp @arr
+
+Ch4
+sub {}
+@_[0], @_[1]
+my
+return
+
+Ch5
+IO
+say (no need to add “\n”)
+
+Ch6
+%hash=(1=>1)
+$hash{1}; delete %hash{1}; keys %hash; values %hash; 
+%ENV
+
+Ch7, Ch8, Ch9
+regex
+meta-character: .; numbers: *, +, ? , {}; set: [], \w, \s, \h, \v, \d; select: |; group: (), \1,\2, (:?), (:<label>); position: ^ $ \b
+binding: =~
+m//, s///gism
+split, join
+
+Ch 10
+unless, until, elsif, {}
+
+Ch 11
+modules
+
+Ch 12
+file -r -w_(virtual file handler) stat
+`date`, localtime timestamp
+
+Ch 13 Too... Unix
+
+Ch14 
+index
+substr
+sort
+
+Ch15
+~~
+given-when
+ 
+Ch16
+system
+exec
+%ENV
+open in “date|program”; open out “program|mail”
+fork
+signal
+
+Ch17
+eval and $@
+grep
+map
+splice!
+
