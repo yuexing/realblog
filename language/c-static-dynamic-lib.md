@@ -104,3 +104,8 @@ W,Doubly defined symbol. If found, allow definition in another library to resolv
 - ar: ar t libxxx.a display achieved items
 
 - readelf -s: ready .so (dynamic lib)
+
+
+## -rpath=dir
+
+Add a directory to the runtime library search path. This is used when linking an ELF executable with shared objects. All -rpath arguments are concatenated and passed to the runtime linker, which uses them to locate shared objects at runtime. The -rpath option is also used when locating shared objects which are needed by shared objects explicitly included in the link;
