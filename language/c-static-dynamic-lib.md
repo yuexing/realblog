@@ -26,16 +26,6 @@ in the order specified on the command line.
   LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH ./a.out
 </pre>
 
-### rpath
-
-<pre>
-  cc prog.cc -L -lfoo -rpath=`pwd`
-</pre>
-
-'rpath' encodes the path to the dynamic library in the program so that no need to
-specify $LD_LIBRARY_PATH. However, it 1) asks for fixed location; 2) degrade
-performance if the so is in NFS.
-
 ### install the so
 
 <pre>
@@ -96,3 +86,21 @@ nodeflib’ linker option).
   - --start-group -lbar_dep -lfunc_dep -Wl,--end-group
 
   - --undefined=bar
+
+
+## tools
+
+http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html
+
+- nm: symbols
+Symbol Type, Description
+A,The symbol’s value is absolute, and will not be changed by further linking.
+B,Un-initialized data section
+D,Initialized data section
+T,Normal code section
+U,Undefined symbol used but not defined. Dependency on another library.
+W,Doubly defined symbol. If found, allow definition in another library to resolve dependency.
+
+- ar: ar t libxxx.a display achieved items
+
+- readelf -s: ready .so (dynamic lib)
